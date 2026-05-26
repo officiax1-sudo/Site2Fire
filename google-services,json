@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "823150999086",
+    "project_id": "site2fire",
+    "storage_bucket": "site2fire.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823150999086:android:657f51a663198e0094d1bf",
+        "android_client_info": {
+          "package_name": "com.site2fire.officiax"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823150999086-jhddnmtmlkr9v466ls6k52ca7nl4lm3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_synG3nWc9AbDo-qag-EG0C1-ge6RIOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823150999086-jhddnmtmlkr9v466ls6k52ca7nl4lm3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

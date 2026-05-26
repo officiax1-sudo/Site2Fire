@@ -1,0 +1,94 @@
+{
+  "entities": {
+    "Build": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Build",
+      "type": "object",
+      "description": "Represents a specific TV app build configuration and its generated assets.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Build."
+        },
+        "ownerId": {
+          "type": "string",
+          "description": "Reference to the authenticated user who owns this build."
+        },
+        "projectTitle": {
+          "type": "string"
+        },
+        "webUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "packageName": {
+          "type": "string"
+        },
+        "versionName": {
+          "type": "string"
+        },
+        "versionCode": {
+          "type": "string"
+        },
+        "dpadScript": {
+          "type": "string",
+          "description": "The AI-generated D-Pad navigation script."
+        },
+        "dpadScriptExplanation": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "completed", "failed"]
+        },
+        "apkUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "projectTitle",
+        "webUrl",
+        "packageName",
+        "status",
+        "createdAt"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "google"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}/builds/{buildId}",
+        "definition": {
+          "entityName": "Build",
+          "schema": {
+            "$ref": "#/backend/entities/Build"
+          },
+          "description": "Stores build records for a specific user.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The owner of the builds."
+            },
+            {
+              "name": "buildId",
+              "description": "Unique build ID."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "A flat build structure under the user ID simplifies listing and managing build history while maintaining strict ownership security."
+  }
+}
