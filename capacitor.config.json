@@ -1,6 +1,6 @@
 {
   "appId": "com.site2fire.app",
   "appName": "site2fire-app",
-  "webDir": ".next",
+  "webDir": "out",
   "bundledWebRuntime": false
 }
